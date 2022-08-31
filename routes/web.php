@@ -29,7 +29,7 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
-    });
+    })->name('dashboard');
 
     Route::resource('/communities', CommunityController::class);
 });
